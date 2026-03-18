@@ -232,12 +232,18 @@
       border-radius: 18px;
       background: rgba(255, 255, 255, 0.98);
       padding: 12px;
+      min-height: 420px;
     }
 
     .hubspot-shell iframe {
       width: 100% !important;
       border: 0;
       border-radius: 12px;
+    }
+
+    .hubspot-shell .hs-form-frame {
+      width: 100%;
+      min-height: 380px;
     }
 
     .form-note {
@@ -377,7 +383,13 @@
             then qualify the lead on the follow-up call.
           </p>
           <div class="hubspot-shell">
-            <script src="https://js-na2.hsforms.net/forms/embed/245574501.js"></script>
+            <script src="https://js-na2.hsforms.net/forms/embed/245574501.js" defer></script>
+            <div
+              class="hs-form-frame"
+              data-region="na2"
+              data-form-id="5e283bf3-48a6-45a2-8719-e6d639c60bbe"
+              data-portal-id="245574501"
+            ></div>
           </div>
           <p class="form-note">If the form takes a second to load after deploy, refresh once.</p>
         </aside>
