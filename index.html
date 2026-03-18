@@ -480,6 +480,25 @@
       color: #62727d;
     }
 
+    .hubspot-shell {
+      margin-top: 18px;
+      border: 1px solid rgba(19, 33, 42, 0.12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 14px;
+    }
+
+    .hubspot-form {
+      min-height: 520px;
+    }
+
+    .hubspot-form iframe {
+      width: 100% !important;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+    }
+
     .site-footer {
       padding: 42px 0 60px;
       border-top: 1px solid var(--line);
@@ -748,40 +767,15 @@
           <span class="eyebrow">Lead Intake</span>
           <h3>Tell us what needs to work better</h3>
           <p>
-            Keep the form short. You want a serious inquiry, not a homework assignment.
+            This is now the real capture point. The HubSpot form lives here so every serious inquiry
+            flows straight into your pipeline instead of into a placeholder mock.
           </p>
-          <form>
-            <div class="field-row">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name" />
-              </div>
-              <div>
-                <label for="company">Company</label>
-                <input id="company" type="text" placeholder="Company name" />
-              </div>
+          <div class="hubspot-shell">
+            <div id="hubspot-form-root" class="hubspot-form">
+              <script src="https://js-na2.hsforms.net/forms/embed/245574501.js"></script>
             </div>
-            <div class="field-row">
-              <div>
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="you@company.com" />
-              </div>
-              <div>
-                <label for="budget">Budget range</label>
-                <select id="budget">
-                  <option>$2k-$5k</option>
-                  <option>$5k-$10k</option>
-                  <option>$10k+</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label for="need">What feels broken right now?</label>
-              <textarea id="need" placeholder="Messaging, lead quality, website conversion, content consistency, trust, or all of it."></textarea>
-            </div>
-            <button class="btn btn-primary" type="button">Request Strategy Call</button>
-          </form>
-          <p class="form-note">Static prototype for now. Your developer can wire this to Netlify Forms, Webflow, or CRM intake.</p>
+          </div>
+          <p class="form-note">If the form does not appear immediately after deploy, give Netlify a hard refresh once the HubSpot script finishes loading.</p>
         </article>
 
         <article class="quote">
