@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checked In Media | Book More Jobs With Video</title>
+  <meta name="description" content="Lead-focused landing page concept with VSL, proof, and intake form for maximum conversion." />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --ink: #e5e7eb;
+      --muted: #9ca3af;
+      --line: #334155;
+      --brand: #0e92a9;
+      --brand-2: #0a6f80;
+      --ok: #10b981;
+      --warn: #f59e0b;
+      --max: 1160px;
+      --r: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, #0e92a925 0, transparent 45%),
+        radial-gradient(circle at 85% 15%, #0e92a918 0, transparent 45%),
+        var(--bg);
+      line-height: 1.5;
+    }
+
+    .wrap { width: min(100% - 2rem, var(--max)); margin: 0 auto; }
+
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+      background: #0d1117d9;
+      border-bottom: 1px solid #ffffff14;
+    }
+
+    .top-row {
+      min-height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 5px #0e92a93d;
+    }
+
+    .btn {
+      border: 0;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover { background: var(--brand-2); }
+
+    .btn.alt {
+      background: transparent;
+      border: 1px solid #ffffff45;
+    }
+
+    .btn.alt:hover {
+      border-color: var(--brand);
+      color: #fff;
+    }
+
+    .hero { padding: 56px 0 32px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    h1, h2, h3 { margin: 0; line-height: 1.15; }
+
+    h1 {
+      font-size: clamp(30px, 5.5vw, 56px);
+      max-width: 13ch;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      margin: 0;
+      color: #d1d5db;
+      font-size: clamp(16px, 1.9vw, 20px);
+      max-width: 52ch;
+    }
+
+    .stack { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .pills { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .pill {
+      border: 1px solid #ffffff2b;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #d1d5db;
+      background: #ffffff08;
+    }
+
+    .card {
+      background: linear-gradient(165deg, #1f2937 0, #111827 65%);
+      border: 1px solid #ffffff1f;
+      border-radius: var(--r);
+      padding: 16px;
+    }
+
+    .vsl {
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      border: 1px solid #ffffff2b;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(145deg, #0e92a936, #ffffff0a),
+        repeating-linear-gradient(45deg, #ffffff06 0 10px, #ffffff00 10px 20px);
+      margin-bottom: 12px;
+    }
+
+    .play {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid #ffffff50;
+      display: grid;
+      place-items: center;
+      background: #0000005c;
+      font-size: 28px;
+    }
+
+    .tiny { font-size: 12px; color: var(--muted); }
+
+    .section { padding: 34px 0; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .bullet {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      color: #d1d5db;
+    }
+
+    .bullet li { margin: 6px 0; }
+
+    .offer {
+      border: 1px solid #0e92a955;
+      background: linear-gradient(165deg, #0e92a925, #111827 70%);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+    }
+
+    label {
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid #ffffff26;
+      background: #0b1220;
+      color: #fff;
+      border-radius: 10px;
+      padding: 12px;
+      font: inherit;
+    }
+
+    textarea { min-height: 90px; resize: vertical; }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .quote {
+      border: 1px solid #ffffff20;
+      border-radius: 12px;
+      padding: 12px;
+      background: #ffffff08;
+      font-size: 14px;
+    }
+
+    .quote strong { display: block; margin-top: 6px; font-size: 12px; color: #cbd5e1; }
+
+    .faq details {
+      border: 1px solid #ffffff20;
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: #ffffff06;
+      margin-top: 8px;
+    }
+
+    .faq summary { cursor: pointer; font-weight: 700; }
+
+    .checklist {
+      margin-top: 12px;
+      border: 1px solid #ffffff1f;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 38px 1fr 110px;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-top: 1px solid #ffffff14;
+      background: #ffffff05;
+    }
+
+    .row:first-child { border-top: 0; }
+
+    .badge {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 4px 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid #ffffff2f;
+    }
+
+    .must { color: #fff; background: #ef444433; border-color: #ef444477; }
+    .high { color: #fff; background: #f59e0b33; border-color: #f59e0b77; }
+    .med { color: #fff; background: #10b98133; border-color: #10b98177; }
+
+    .sticky-cta {
+      position: sticky;
+      bottom: 0;
+      z-index: 15;
+      border-top: 1px solid #ffffff1f;
+      background: #0b1220eb;
+      backdrop-filter: blur(8px);
+    }
+
+    .sticky-row {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .muted { color: var(--muted); }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .split,
+      .grid-3,
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .row {
+        grid-template-columns: 30px 1fr;
+      }
+
+      .badge { justify-self: start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <div class="logo"><span class="dot"></span>Checked In Media | Landing V1</div>
+      <a class="btn" href="#intake">Get Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Wyoming Video Production</span>
+          <h1>Book Higher-Value Clients With Better Video Marketing</h1>
+          <p class="lead">We help service businesses turn traffic into booked calls with strategy-first video, clean messaging, and conversion-focused assets.</p>
+          <div class="stack">
+            <a class="btn" href="#intake">Book Strategy Call</a>
+            <a class="btn alt" href="#checklist">See Launch Checklist</a>
+          </div>
+          <div class="pills">
+            <span class="pill">5.0 Rating</span>
+            <span class="pill">38+ Reviews</span>
+            <span class="pill">Commercial + Social + Ads</span>
+          </div>
+        </div>
+        <aside class="card">
+          <div class="vsl">
+            <div class="play">▶</div>
+          </div>
+          <h3>Primary VSL Slot (60-120s)</h3>
+          <p class="tiny">Hook in 5s -> Problem -> Unique Process -> Proof -> CTA to form.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Core Promise + Offer Stack</h2>
+        <div class="grid-3">
+          <article class="card offer">
+            <h3>Offer</h3>
+            <p>"30-Day Video Lead Engine" with strategic VSL, ad cutdowns, and landing page assets.</p>
+          </article>
+          <article class="card">
+            <h3>Who It’s For</h3>
+            <p>Service businesses doing $250k+ annually that need more qualified inbound leads.</p>
+          </article>
+          <article class="card">
+            <h3>Fast Win</h3>
+            <p>Launch one VSL + one lead page + 3 retargeting clips in week one.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="intake">
+      <div class="wrap split">
+        <div class="card">
+          <h2>Lead Intake Form</h2>
+          <p class="muted">Short form first. Qualify on follow-up call, not on page.</p>
+          <form>
+            <div>
+              <label>Name</label>
+              <input placeholder="Your full name" />
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" placeholder="you@company.com" />
+            </div>
+            <div>
+              <label>Phone</label>
+              <input type="tel" placeholder="(307) 555-1234" />
+            </div>
+            <div>
+              <label>Monthly Marketing Budget</label>
+              <select>
+                <option>$1k-$3k</option>
+                <option>$3k-$8k</option>
+                <option>$8k+</option>
+              </select>
+            </div>
+            <div>
+              <label>Biggest Goal</label>
+              <textarea placeholder="More booked calls, better lead quality, better conversion rate..."></textarea>
+            </div>
+            <button class="btn" type="button">Request Strategy Call</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Why this form converts</h3>
+          <ul class="bullet">
+            <li>Asks only what sales needs to qualify quickly</li>
+            <li>No long questionnaire before trust is built</li>
+            <li>Strong offer context above form reduces drop-off</li>
+            <li>Single CTA repeated across the page</li>
+          </ul>
+          <div class="proof-grid">
+            <div class="quote">"Best media partner we've had. Process was clean and fast."<strong>Operations Lead</strong></div>
+            <div class="quote">"Video assets actually helped our sales team close."<strong>Owner, Local Service Brand</strong></div>
+            <div class="quote">"Immediate upgrade in lead quality."<strong>Marketing Director</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="wrap split">
+        <div class="card">
+          <h2>FAQ (Objection Handling)</h2>
+          <details open>
+            <summary>How fast can we launch?</summary>
+            <p>7-14 days for first VSL and page if messaging and approvals are quick.</p>
+          </details>
+          <details>
+            <summary>Can you script the VSL?</summary>
+            <p>Yes. Script + shot list + hook testing framework is included.</p>
+          </details>
+          <details>
+            <summary>Do you handle ad cutdowns?</summary>
+            <p>Yes. Short clips for top, mid, and retargeting stages.</p>
+          </details>
+        </div>
+
+        <div class="card" id="checklist">
+          <h2>Creative Production Checklist</h2>
+          <p class="muted">Use this to brief your team before launch.</p>
+          <div class="checklist">
+            <div class="row"><input type="checkbox" /><div><strong>VSL Script v1 (90s)</strong><br><span class="tiny">Hook, problem, mechanism, proof, CTA.</span></div><span class="badge must">Must</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>VSL Shoot Plan</strong><br><span class="tiny">A-roll talking head + B-roll proof shots + testimonial clips.</span></div><span class="badge must">Must</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>Hero Thumbnail Variants (x3)</strong><br><span class="tiny">Different emotional hooks for split testing.</span></div><span class="badge high">High</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>Case Study Blocks (x3)</strong><br><span class="tiny">Before/after metrics, challenge, deliverables, outcome.</span></div><span class="badge must">Must</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>Offer Graphic / Pricing Anchor</strong><br><span class="tiny">Make package value easy to understand in 5 seconds.</span></div><span class="badge high">High</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>Trust Assets</strong><br><span class="tiny">Google review screenshot, logos, testimonial headshots.</span></div><span class="badge must">Must</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>Ad Cutfdowns (15s/30s)</strong><br><span class="tiny">Three hooks per audience segment.</span></div><span class="badge high">High</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>Thank-You Page Video</strong><br><span class="tiny">Set expectations to reduce no-show rate.</span></div><span class="badge med">Medium</span></div>
+            <div class="row"><input type="checkbox" /><div><strong>Call Booking Reminder Assets</strong><br><span class="tiny">SMS/email reminder copy + 1 short reassurance video.</span></div><span class="badge med">Medium</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-cta">
+    <div class="wrap sticky-row">
+      <div><strong>Next Step:</strong> finalize script + VSL shoot date this week.</div>
+      <a class="btn" href="#intake">Book Strategy Call</a>
+    </div>
+  </div>
+</body>
+</html>
