@@ -3,479 +3,824 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checked In Media | Book More Jobs With Video</title>
-  <meta name="description" content="Lead-focused landing page concept with VSL, proof, and intake form for maximum conversion." />
+  <title>Checked In Media | Video Production and Marketing Systems</title>
+  <meta
+    name="description"
+    content="Checked In Media builds commercial video, social content, and campaign systems that help Wyoming businesses win more trust and better leads."
+  />
   <style>
     :root {
-      --bg: #0d1117;
-      --panel: #111827;
-      --panel-2: #1f2937;
-      --ink: #e5e7eb;
-      --muted: #9ca3af;
-      --line: #334155;
+      --bg: #0f171c;
+      --bg-soft: #16242c;
+      --panel: #13212a;
+      --panel-2: #f6f0e6;
+      --ink: #f2f4f5;
+      --ink-soft: #b7c2c8;
+      --ink-dark: #13212a;
+      --line: rgba(255, 255, 255, 0.12);
+      --line-dark: rgba(19, 33, 42, 0.12);
       --brand: #0e92a9;
-      --brand-2: #0a6f80;
-      --ok: #10b981;
-      --warn: #f59e0b;
-      --max: 1160px;
-      --r: 14px;
+      --brand-deep: #0a7284;
+      --signal: #f4a259;
+      --max: 1180px;
+      --r-xl: 28px;
+      --r-lg: 20px;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 10% 10%, #0e92a925 0, transparent 45%),
-        radial-gradient(circle at 85% 15%, #0e92a918 0, transparent 45%),
+        radial-gradient(circle at 15% 0%, rgba(14, 146, 169, 0.14), transparent 34%),
+        radial-gradient(circle at 90% 5%, rgba(244, 162, 89, 0.12), transparent 22%),
         var(--bg);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
     }
 
-    .wrap { width: min(100% - 2rem, var(--max)); margin: 0 auto; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-    .top {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(8px);
-      background: #0d1117d9;
-      border-bottom: 1px solid #ffffff14;
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 23, 28, 0.8);
+      backdrop-filter: blur(14px);
     }
 
-    .top-row {
-      min-height: 70px;
+    .header-row {
+      min-height: 82px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 14px;
+      justify-content: space-between;
+      gap: 16px;
     }
 
     .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 12px;
+      width: 186px;
+      height: auto;
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--brand);
-      box-shadow: 0 0 0 5px #0e92a93d;
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      color: var(--ink-soft);
+    }
+
+    .nav a:hover {
+      color: var(--ink);
     }
 
     .btn {
-      border: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 15px 22px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
       background: var(--brand);
       color: #fff;
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
+      box-shadow: 0 14px 28px rgba(14, 146, 169, 0.2);
     }
 
-    .btn:hover { background: var(--brand-2); }
+    .btn-primary:hover {
+      background: var(--brand-deep);
+      transform: translateY(-1px);
+    }
 
-    .btn.alt {
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--ink);
       background: transparent;
-      border: 1px solid #ffffff45;
     }
 
-    .btn.alt:hover {
-      border-color: var(--brand);
-      color: #fff;
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.05);
     }
 
-    .hero { padding: 56px 0 32px; }
+    .section {
+      padding: 72px 0;
+    }
 
-    .hero-grid {
+    .hero {
+      padding: 44px 0 56px;
+    }
+
+    .hero-shell {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 18px;
       align-items: stretch;
     }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--brand);
-      font-weight: 800;
-      margin-bottom: 8px;
+    .hero-copy {
+      padding: 22px 0;
     }
 
-    h1, h2, h3 { margin: 0; line-height: 1.15; }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: #8ddce7;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+    }
 
     h1 {
-      font-size: clamp(30px, 5.5vw, 56px);
-      max-width: 13ch;
+      max-width: 9ch;
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      max-width: 12ch;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.55rem;
       margin-bottom: 10px;
     }
 
     .lead {
+      max-width: 60ch;
       margin: 0;
-      color: #d1d5db;
-      font-size: clamp(16px, 1.9vw, 20px);
-      max-width: 52ch;
+      color: var(--ink-soft);
+      font-size: 1.08rem;
+      line-height: 1.7;
     }
 
-    .stack { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .cta-row,
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-    .pills { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .cta-row {
+      margin-top: 24px;
+    }
 
-    .pill {
-      border: 1px solid #ffffff2b;
+    .chip-row {
+      margin-top: 18px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 5px 10px;
+      padding: 7px 11px;
+      color: var(--ink-soft);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.06em;
-      color: #d1d5db;
-      background: #ffffff08;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .card {
-      background: linear-gradient(165deg, #1f2937 0, #111827 65%);
-      border: 1px solid #ffffff1f;
-      border-radius: var(--r);
-      padding: 16px;
-    }
-
-    .vsl {
-      aspect-ratio: 16 / 9;
-      border-radius: 12px;
-      border: 1px solid #ffffff2b;
-      display: grid;
-      place-items: center;
+    .hero-panel {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--r-xl);
       background:
-        linear-gradient(145deg, #0e92a936, #ffffff0a),
-        repeating-linear-gradient(45deg, #ffffff06 0 10px, #ffffff00 10px 20px);
-      margin-bottom: 12px;
+        linear-gradient(180deg, rgba(19, 33, 42, 0.08), rgba(19, 33, 42, 0.65)),
+        url("assets/images/6982469701809cdedf25fe5a_695A1399.MP4.00_00_02_24.Still001_copy.webp") center/cover no-repeat;
+      box-shadow: var(--shadow);
     }
 
-    .play {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      border: 1px solid #ffffff50;
+    .hero-overlay {
+      position: absolute;
+      inset: auto 24px 24px 24px;
       display: grid;
-      place-items: center;
-      background: #0000005c;
-      font-size: 28px;
-    }
-
-    .tiny { font-size: 12px; color: var(--muted); }
-
-    .section { padding: 34px 0; }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .bullet {
-      margin: 6px 0 0;
-      padding-left: 18px;
-      color: #d1d5db;
-    }
-
-    .bullet li { margin: 6px 0; }
-
-    .offer {
-      border: 1px solid #0e92a955;
-      background: linear-gradient(165deg, #0e92a925, #111827 70%);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 14px;
-      margin-top: 14px;
+    }
+
+    .mini-card {
+      width: min(100%, 340px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--r-lg);
+      background: rgba(15, 23, 28, 0.76);
+      padding: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .mini-card h3,
+    .service-card h3,
+    .proof-card h3,
+    .process-card h3,
+    .quote h3,
+    .form-card h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .mini-card p,
+    .service-card p,
+    .proof-card p,
+    .process-card p,
+    .quote p,
+    .form-card p,
+    .section-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .service-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+    }
+
+    .service-grid,
+    .proof-grid,
+    .process-grid,
+    .quote-grid,
+    .footer-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .proof-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+    }
+
+    .process-grid,
+    .quote-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    }
+
+    .service-card,
+    .proof-card,
+    .process-card,
+    .quote,
+    .form-card {
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 18px;
+    }
+
+    .service-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-index,
+    .proof-tag,
+    .stat-label {
+      color: #8ddce7;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-head {
+      max-width: 70ch;
+      margin-bottom: 24px;
+    }
+
+    .section-copy {
+      max-width: 70ch;
+    }
+
+    .cream-section {
+      color: var(--ink-dark);
+      background: linear-gradient(180deg, #f9f2e8 0%, #f2e9dd 100%);
+    }
+
+    .cream-section .eyebrow {
+      color: var(--brand-deep);
+    }
+
+    .cream-section .lead,
+    .cream-section .section-copy,
+    .cream-section .proof-card p,
+    .cream-section .quote p,
+    .cream-section .form-card p,
+    .cream-section label {
+      color: #53616c;
+    }
+
+    .cream-section .proof-card,
+    .cream-section .quote,
+    .cream-section .form-card {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: var(--line-dark);
+      box-shadow: 0 20px 38px rgba(19, 33, 42, 0.08);
+    }
+
+    .proof-card.visual {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .proof-image {
+      aspect-ratio: 16 / 11;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .proof-body {
+      padding: 20px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      border-top: 1px solid rgba(19, 33, 42, 0.12);
+      padding-top: 14px;
+    }
+
+    .stat-value {
+      margin-bottom: 6px;
+      color: var(--brand-deep);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .process-card {
+      min-height: 210px;
+    }
+
+    .quote-grid {
+      margin-top: 22px;
+    }
+
+    .quote h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      color: #8ddce7;
+    }
+
+    .intake {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
     }
 
     form {
       display: grid;
-      gap: 10px;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
     label {
-      font-size: 12px;
-      color: #cbd5e1;
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink-soft);
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
-      border: 1px solid #ffffff26;
-      background: #0b1220;
-      color: #fff;
-      border-radius: 10px;
-      padding: 12px;
+      border: 1px solid rgba(19, 33, 42, 0.12);
+      border-radius: 14px;
+      background: #fff;
+      padding: 14px;
+      color: var(--ink-dark);
       font: inherit;
     }
 
-    textarea { min-height: 90px; resize: vertical; }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 12px;
+    textarea {
+      min-height: 130px;
+      resize: vertical;
     }
 
-    .quote {
-      border: 1px solid #ffffff20;
-      border-radius: 12px;
-      padding: 12px;
-      background: #ffffff08;
-      font-size: 14px;
+    .form-note {
+      font-size: 0.84rem;
+      color: #62727d;
     }
 
-    .quote strong { display: block; margin-top: 6px; font-size: 12px; color: #cbd5e1; }
-
-    .faq details {
-      border: 1px solid #ffffff20;
-      border-radius: 10px;
-      padding: 10px 12px;
-      background: #ffffff06;
-      margin-top: 8px;
+    .site-footer {
+      padding: 42px 0 60px;
+      border-top: 1px solid var(--line);
     }
 
-    .faq summary { cursor: pointer; font-weight: 700; }
-
-    .checklist {
-      margin-top: 12px;
-      border: 1px solid #ffffff1f;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: 38px 1fr 110px;
-      gap: 10px;
-      align-items: center;
-      padding: 10px 12px;
-      border-top: 1px solid #ffffff14;
-      background: #ffffff05;
-    }
-
-    .row:first-child { border-top: 0; }
-
-    .badge {
-      text-align: center;
-      font-size: 11px;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 4px 8px;
-      letter-spacing: 0.06em;
+    .site-footer h3 {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      border: 1px solid #ffffff2f;
     }
 
-    .must { color: #fff; background: #ef444433; border-color: #ef444477; }
-    .high { color: #fff; background: #f59e0b33; border-color: #f59e0b77; }
-    .med { color: #fff; background: #10b98133; border-color: #10b98177; }
-
-    .sticky-cta {
-      position: sticky;
-      bottom: 0;
-      z-index: 15;
-      border-top: 1px solid #ffffff1f;
-      background: #0b1220eb;
-      backdrop-filter: blur(8px);
+    .site-footer p,
+    .site-footer a {
+      margin: 0 0 8px;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
     }
 
-    .sticky-row {
-      min-height: 66px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    .muted { color: var(--muted); }
-
-    @media (max-width: 960px) {
-      .hero-grid,
-      .split,
-      .grid-3,
-      .proof-grid {
+    @media (max-width: 1080px) {
+      .hero-shell,
+      .proof-grid,
+      .intake,
+      .service-grid,
+      .process-grid,
+      .quote-grid,
+      .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .row {
-        grid-template-columns: 30px 1fr;
+      .hero-panel {
+        min-height: 480px;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .nav {
+        display: none;
       }
 
-      .badge { justify-self: start; }
+      .field-row,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      h1 {
+        max-width: 10ch;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="top">
-    <div class="wrap top-row">
-      <div class="logo"><span class="dot"></span>Checked In Media | Landing V1</div>
-      <a class="btn" href="#intake">Get Quote</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a href="#top">
+        <img class="logo" src="assets/images/64cd58fdc2a21bcbc1139fa2_Checked_In_Media.png" alt="Checked In Media" />
+      </a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Get A Quote</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Wyoming Video Production</span>
-          <h1>Book Higher-Value Clients With Better Video Marketing</h1>
-          <p class="lead">We help service businesses turn traffic into booked calls with strategy-first video, clean messaging, and conversion-focused assets.</p>
-          <div class="stack">
-            <a class="btn" href="#intake">Book Strategy Call</a>
-            <a class="btn alt" href="#checklist">See Launch Checklist</a>
+      <div class="wrap hero-shell">
+        <div class="hero-copy">
+          <span class="eyebrow">Commercial Video and Marketing Systems</span>
+          <h1>Build More Trust Before The Sales Call</h1>
+          <p class="lead">
+            Checked In Media helps Wyoming and regional brands turn unclear messaging into sharper
+            video, stronger websites, and campaign assets that make buyers feel confident faster.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Book A Strategy Call</a>
+            <a class="btn btn-secondary" href="#results">See The System</a>
           </div>
-          <div class="pills">
-            <span class="pill">5.0 Rating</span>
-            <span class="pill">38+ Reviews</span>
-            <span class="pill">Commercial + Social + Ads</span>
+          <div class="chip-row">
+            <span class="chip">5.0 Google Rating</span>
+            <span class="chip">38+ Reviews</span>
+            <span class="chip">Wyoming Based</span>
+            <span class="chip">Video First Marketing</span>
           </div>
         </div>
-        <aside class="card">
-          <div class="vsl">
-            <div class="play">▶</div>
+
+        <div class="hero-panel">
+          <div class="hero-overlay">
+            <div class="mini-card">
+              <h3>What changes here</h3>
+              <p>
+                This takes the cleaner, more executive ProMedia feel and remaps it to Checked In Media:
+                more authority, stronger service framing, and less blog-style clutter.
+              </p>
+            </div>
+            <div class="mini-card">
+              <h3>Primary page goal</h3>
+              <p>
+                One CTA path. One positioning story. A page that feels like a serious marketing partner,
+                not just a videographer portfolio.
+              </p>
+            </div>
           </div>
-          <h3>Primary VSL Slot (60-120s)</h3>
-          <p class="tiny">Hook in 5s -> Problem -> Unique Process -> Proof -> CTA to form.</p>
-        </aside>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="services" class="section service-band">
       <div class="wrap">
-        <h2>Core Promise + Offer Stack</h2>
-        <div class="grid-3">
-          <article class="card offer">
-            <h3>Offer</h3>
-            <p>"30-Day Video Lead Engine" with strategic VSL, ad cutdowns, and landing page assets.</p>
+        <div class="section-head">
+          <span class="eyebrow">Service Architecture</span>
+          <h2>What you actually sell should read like a system</h2>
+          <p class="section-copy">
+            This is one of the strongest things ProMedia does well. The page feels like a complete
+            operation. Your version should package video, message strategy, web support, and campaign
+            execution as one coherent growth service.
+          </p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-index">01</div>
+            <div>
+              <h3>Brand and Sales Video</h3>
+              <p>Hero videos, trust builders, customer stories, and sales enablement assets.</p>
+            </div>
           </article>
-          <article class="card">
-            <h3>Who It’s For</h3>
-            <p>Service businesses doing $250k+ annually that need more qualified inbound leads.</p>
+          <article class="service-card">
+            <div class="service-index">02</div>
+            <div>
+              <h3>Content Systems</h3>
+              <p>Short-form cutdowns, campaign clips, and recurring content that actually gets used.</p>
+            </div>
           </article>
-          <article class="card">
-            <h3>Fast Win</h3>
-            <p>Launch one VSL + one lead page + 3 retargeting clips in week one.</p>
+          <article class="service-card">
+            <div class="service-index">03</div>
+            <div>
+              <h3>Website Conversion Support</h3>
+              <p>Sharper page messaging, better structure, and media placed where it moves trust.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-index">04</div>
+            <div>
+              <h3>Campaign Rollout</h3>
+              <p>Launch-ready creative for web, social, retargeting, and local visibility pushes.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="intake">
-      <div class="wrap split">
-        <div class="card">
-          <h2>Lead Intake Form</h2>
-          <p class="muted">Short form first. Qualify on follow-up call, not on page.</p>
+    <section id="results" class="section cream-section">
+      <div class="wrap proof-grid">
+        <article class="proof-card visual">
+          <img class="proof-image" src="assets/images/697d9ee9f2ba5a7a19cf46a6_header1.webp" alt="Checked In Media case study visual" />
+          <div class="proof-body">
+            <div class="proof-tag">Case Study Framing</div>
+            <h3>Proof should look like business outcomes, not a post feed</h3>
+            <p>
+              Rework your featured projects into challenge, execution, and impact. That gives this page
+              the same confidence rhythm you liked, while still sounding like Checked In Media.
+            </p>
+          </div>
+        </article>
+
+        <article class="proof-card">
+          <span class="eyebrow">Results Layer</span>
+          <h2>Sharper positioning. Stronger proof. Cleaner next step.</h2>
+          <p class="section-copy">
+            Your current site already has authority. What it needs is tighter packaging. This layout
+            gets the trust signals above the fold faster and makes the business feel more strategic.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-value">38+</div>
+              <div class="stat-label">Google reviews already earned</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">5.0</div>
+              <div class="stat-label">Review average you can lean on harder</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">1</div>
+              <div class="stat-label">Primary CTA the page should push</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">4</div>
+              <div class="stat-label">Core service pillars worth foregrounding</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Operating Model</span>
+          <h2>Make the process look disciplined</h2>
+          <p class="section-copy">
+            Another thing to borrow from ProMedia is operational confidence. Buyers should feel there is
+            a clear way to work with you, not just a vague creative engagement.
+          </p>
+        </div>
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="service-index">Discover</div>
+            <h3>Audit the friction</h3>
+            <p>Clarify the offer, audience, objections, and where current messaging is leaking trust.</p>
+          </article>
+          <article class="process-card">
+            <div class="service-index">Build</div>
+            <h3>Create the core assets</h3>
+            <p>Produce the hero video, sales support cuts, supporting images, and website messaging.</p>
+          </article>
+          <article class="process-card">
+            <div class="service-index">Deploy</div>
+            <h3>Launch with intent</h3>
+            <p>Place the assets where they influence buyer confidence: homepage, landing page, ads, and sales follow-up.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cream-section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Selected Work</span>
+          <h2>Keep the visual authority high</h2>
+          <p class="section-copy">
+            Use larger, cleaner project visuals. The site should feel closer to a strategic agency and
+            less like a rolling article archive.
+          </p>
+        </div>
+        <div class="quote-grid">
+          <article class="quote">
+            <img class="proof-image" src="assets/images/68e5df2c98b75f94c8f9f50e_hilltop_and_cheyenne.webp" alt="Project still" />
+            <h3>Regional Brand Story</h3>
+            <p>Use this slot for a polished business narrative with a two-line outcome summary.</p>
+          </article>
+          <article class="quote">
+            <img class="proof-image" src="assets/images/67b425bc641022ef1ad5e130_cheyenne.webp" alt="Project still" />
+            <h3>Commercial Campaign Support</h3>
+            <p>Show the campaign mechanics: website, short-form clips, and lead-gen use case.</p>
+          </article>
+          <article class="quote">
+            <img class="proof-image" src="assets/images/6982469701809cdedf25fe5a_695A1399.MP4.00_00_02_24.Still001_copy.webp" alt="Project still" />
+            <h3>Sales Enablement Video</h3>
+            <p>Frame this around how video shortens the trust gap before proposals and calls.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap intake">
+        <article class="form-card">
+          <span class="eyebrow">Lead Intake</span>
+          <h3>Tell us what needs to work better</h3>
+          <p>
+            Keep the form short. You want a serious inquiry, not a homework assignment.
+          </p>
           <form>
-            <div>
-              <label>Name</label>
-              <input placeholder="Your full name" />
+            <div class="field-row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="company">Company</label>
+                <input id="company" type="text" placeholder="Company name" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@company.com" />
+              </div>
+              <div>
+                <label for="budget">Budget range</label>
+                <select id="budget">
+                  <option>$2k-$5k</option>
+                  <option>$5k-$10k</option>
+                  <option>$10k+</option>
+                </select>
+              </div>
             </div>
             <div>
-              <label>Email</label>
-              <input type="email" placeholder="you@company.com" />
+              <label for="need">What feels broken right now?</label>
+              <textarea id="need" placeholder="Messaging, lead quality, website conversion, content consistency, trust, or all of it."></textarea>
             </div>
-            <div>
-              <label>Phone</label>
-              <input type="tel" placeholder="(307) 555-1234" />
-            </div>
-            <div>
-              <label>Monthly Marketing Budget</label>
-              <select>
-                <option>$1k-$3k</option>
-                <option>$3k-$8k</option>
-                <option>$8k+</option>
-              </select>
-            </div>
-            <div>
-              <label>Biggest Goal</label>
-              <textarea placeholder="More booked calls, better lead quality, better conversion rate..."></textarea>
-            </div>
-            <button class="btn" type="button">Request Strategy Call</button>
+            <button class="btn btn-primary" type="button">Request Strategy Call</button>
           </form>
-        </div>
+          <p class="form-note">Static prototype for now. Your developer can wire this to Netlify Forms, Webflow, or CRM intake.</p>
+        </article>
 
-        <div class="card">
-          <h3>Why this form converts</h3>
-          <ul class="bullet">
-            <li>Asks only what sales needs to qualify quickly</li>
-            <li>No long questionnaire before trust is built</li>
-            <li>Strong offer context above form reduces drop-off</li>
-            <li>Single CTA repeated across the page</li>
-          </ul>
-          <div class="proof-grid">
-            <div class="quote">"Best media partner we've had. Process was clean and fast."<strong>Operations Lead</strong></div>
-            <div class="quote">"Video assets actually helped our sales team close."<strong>Owner, Local Service Brand</strong></div>
-            <div class="quote">"Immediate upgrade in lead quality."<strong>Marketing Director</strong></div>
+        <article class="quote">
+          <span class="eyebrow">Direction Note</span>
+          <h3>This is the mix you asked for</h3>
+          <p>
+            It keeps Checked In Media’s color language, project visuals, and Wyoming-market positioning,
+            but borrows the cleaner service architecture and executive sales tone from ProMedia.
+          </p>
+          <div class="chip-row" style="margin-top:18px;">
+            <span class="chip" style="color:var(--ink-dark); border-color:var(--line-dark);">Sharper hierarchy</span>
+            <span class="chip" style="color:var(--ink-dark); border-color:var(--line-dark);">More authority</span>
+            <span class="chip" style="color:var(--ink-dark); border-color:var(--line-dark);">Less clutter</span>
+            <span class="chip" style="color:var(--ink-dark); border-color:var(--line-dark);">Cleaner CTA flow</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq">
-      <div class="wrap split">
-        <div class="card">
-          <h2>FAQ (Objection Handling)</h2>
-          <details open>
-            <summary>How fast can we launch?</summary>
-            <p>7-14 days for first VSL and page if messaging and approvals are quick.</p>
-          </details>
-          <details>
-            <summary>Can you script the VSL?</summary>
-            <p>Yes. Script + shot list + hook testing framework is included.</p>
-          </details>
-          <details>
-            <summary>Do you handle ad cutdowns?</summary>
-            <p>Yes. Short clips for top, mid, and retargeting stages.</p>
-          </details>
-        </div>
-
-        <div class="card" id="checklist">
-          <h2>Creative Production Checklist</h2>
-          <p class="muted">Use this to brief your team before launch.</p>
-          <div class="checklist">
-            <div class="row"><input type="checkbox" /><div><strong>VSL Script v1 (90s)</strong><br><span class="tiny">Hook, problem, mechanism, proof, CTA.</span></div><span class="badge must">Must</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>VSL Shoot Plan</strong><br><span class="tiny">A-roll talking head + B-roll proof shots + testimonial clips.</span></div><span class="badge must">Must</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>Hero Thumbnail Variants (x3)</strong><br><span class="tiny">Different emotional hooks for split testing.</span></div><span class="badge high">High</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>Case Study Blocks (x3)</strong><br><span class="tiny">Before/after metrics, challenge, deliverables, outcome.</span></div><span class="badge must">Must</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>Offer Graphic / Pricing Anchor</strong><br><span class="tiny">Make package value easy to understand in 5 seconds.</span></div><span class="badge high">High</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>Trust Assets</strong><br><span class="tiny">Google review screenshot, logos, testimonial headshots.</span></div><span class="badge must">Must</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>Ad Cutfdowns (15s/30s)</strong><br><span class="tiny">Three hooks per audience segment.</span></div><span class="badge high">High</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>Thank-You Page Video</strong><br><span class="tiny">Set expectations to reduce no-show rate.</span></div><span class="badge med">Medium</span></div>
-            <div class="row"><input type="checkbox" /><div><strong>Call Booking Reminder Assets</strong><br><span class="tiny">SMS/email reminder copy + 1 short reassurance video.</span></div><span class="badge med">Medium</span></div>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <div class="sticky-cta">
-    <div class="wrap sticky-row">
-      <div><strong>Next Step:</strong> finalize script + VSL shoot date this week.</div>
-      <a class="btn" href="#intake">Book Strategy Call</a>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Checked In Media</h3>
+        <p>Video production and marketing systems for Wyoming businesses that need more trust and stronger inbound.</p>
+      </div>
+      <div>
+        <h3>Use This For</h3>
+        <p>Homepage concept</p>
+        <p>Landing page direction</p>
+        <p>Developer handoff</p>
+      </div>
+      <div>
+        <h3>Next Pass</h3>
+        <p>Rewrite around one offer</p>
+        <p>Add real testimonials</p>
+        <p>Wire live forms and analytics</p>
+      </div>
     </div>
-  </div>
+  </footer>
 </body>
 </html>
